@@ -21,9 +21,11 @@ const currentUser = {
   "topic": "Space",
   "time": "2h",
   "liked": false,
+  "disliked": false,
   "replies": 0,
   "retuits": 0,
   "likes": 0,
+  "dislikes": 0,
  }
 
 const createTuit = (req, res) => {
@@ -32,6 +34,8 @@ const createTuit = (req, res) => {
     newTuit._id = (new Date()).getTime()+'';
     newTuit.likes = 0;
     newTuit.liked = false;
+    newTuit.dislikes = 0;
+    newTuit.disliked = false;
     tuits.push(newTuit);
     res.json(newTuit);
 }
